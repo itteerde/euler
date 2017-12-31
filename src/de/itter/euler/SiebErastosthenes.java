@@ -49,6 +49,9 @@ public class SiebErastosthenes {
 	}
 
 	public static int nth(int n) {
+		if (primes.size() < n) {
+			new SiebErastosthenes(n * 20);
+		}
 		return primes.elementAt(n - 1).intValue();
 	}
 
