@@ -18,7 +18,7 @@ public class Problem0220 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 18; i++) {
 			step();
 		}
 
