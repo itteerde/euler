@@ -18,15 +18,14 @@ public class Problem0220 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		for (int i = 0; i < 18; i++) {
+		for (int i = 0; i < 10; i++) {
 			step();
 		}
 
-		// draw(curve.length());
 		draw(500);
 
-		System.out.println(curve);
 		System.out.println("(" + x + "," + y + ")");
+		System.out.println(curve.length());
 	}
 
 	private static void step() {
