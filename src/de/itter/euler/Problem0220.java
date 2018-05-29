@@ -26,7 +26,7 @@ public class Problem0220 {
 
 		System.out.println("(" + x + "," + y + ")");
 		System.out.println(curve.length());
-		System.out.println(curve);
+		// System.out.println(curve);
 	}
 
 	private static void step() {
