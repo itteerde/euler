@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Vector;
 
@@ -43,7 +44,7 @@ public class Problem0098 {
 		Vector<String> squareAnagramKeys = new Vector<String>(new LinkedList<String>(squareAnagrams.keySet()));
 		squareAnagramKeys.sort(new StringLengthComparator());
 		
-		for(int i=0;i<10;i++){
+		for(int i=0;i<20;i++){
 			System.out.println(squareAnagrams.get(squareAnagramKeys.elementAt(i)));
 		}
 		
@@ -135,6 +136,13 @@ public class Problem0098 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	private static boolean isValid(String a, String b, long x, long y){
+		
+		char[] c = new char[10];
+		
+		return false;
 	}
 
 }
