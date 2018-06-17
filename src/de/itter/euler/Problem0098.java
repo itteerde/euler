@@ -35,7 +35,7 @@ public class Problem0098 {
 		readWords();
 		findAnagrams();
 		deleteTrivials();
-		System.out.println(wordAnagrams.size());
+		System.out.println(wordAnagrams);
 		findSquareAnagrams();
 		deleteTrivialSquares();
 		System.out.println(squareAnagrams.size());
