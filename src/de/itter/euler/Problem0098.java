@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Vector;
 
@@ -23,7 +25,7 @@ public class Problem0098 {
 
 	private static Vector<String> words = new Vector<String>();
 	private static HashMap<String, Collection<String>> wordAnagrams = new HashMap<String, Collection<String>>();
-	private static HashMap<String, Collection<Integer>> squareAnagrams = new HashMap<String, Collection<Integer>>();
+	private static HashMap<String, Collection<Long>> squareAnagrams = new HashMap<String, Collection<Long>>();
 
 	/**
 	 * @param args
@@ -33,10 +35,19 @@ public class Problem0098 {
 		readWords();
 		findAnagrams();
 		deleteTrivials();
-		System.out.println(wordAnagrams.size());
+		System.out.println(wordAnagrams);
 		findSquareAnagrams();
 		deleteTrivialSquares();
 		System.out.println(squareAnagrams.size());
+		
+		
+		Vector<String> squareAnagramKeys = new Vector<String>(new LinkedList<String>(squareAnagrams.keySet()));
+		squareAnagramKeys.sort(new StringLengthComparator());
+		
+		for(int i=0;i<20;i++){
+			System.out.println(squareAnagrams.get(squareAnagramKeys.elementAt(i)));
+		}
+		
 		System.out.println(System.currentTimeMillis() - t + "ms");
 	}
 
@@ -60,13 +71,13 @@ public class Problem0098 {
 	 * 
 	 */
 	private static void findSquareAnagrams() {
-		for (int i = 1; i < 100000; i++) {
-			String key = Integer.toString(i);
+		for (long i = 1; i < 100000; i++) {
+			String key = Long.toString(i*i);
 			key = key(key);
 			if (!squareAnagrams.containsKey(key)) {
-				squareAnagrams.put(key, new Vector<Integer>());
+				squareAnagrams.put(key, new Vector<Long>());
 			}
-			squareAnagrams.get(key).add(new Integer(i));
+			squareAnagrams.get(key).add(new Long(i*i));
 		}
 	}
 
@@ -125,6 +136,13 @@ public class Problem0098 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	private static boolean isValid(String a, String b, long x, long y){
+		
+		char[] c = new char[10];
+		
+		return false;
 	}
 
 }
